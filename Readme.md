@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Anya Kozyreva](https://up.htmlacademy.ru/javascript/26/user/640419).
-* Наставник: `Неизвестно`.
+* Наставник: [Коля Колганов](https://htmlacademy.ru/profile/id794007).
 
 ---
 
