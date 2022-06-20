@@ -5,17 +5,17 @@
 // https://learn.javascript.ru/task/random-int-min-max
 
 function getRandomIntFromRange(start, end) {
-    let from = start;
-    let to = end;
+  let from = start;
+  let to = end;
 
-    if (end < start) {
-        from = end;
-        to = start;
-    }
+  if (end < start) {
+    from = end;
+    to = start;
+  }
 
-    if (from >= 0 || start <= end) {
-        return Math.floor(Math.random() * (to - from + 1)) + from;
-    }
+  if (from >= 0 || start <= end) {
+    return Math.floor(Math.random() * (to - from + 1)) + from;
+  }
 }
 getRandomIntFromRange(100, 140);
 
@@ -23,6 +23,6 @@ getRandomIntFromRange(100, 140);
 // Будет использоваться для проверки длины введённого комментария, но должна быть универсальна
 
 function isLineTooLong(line, length) {
-    return line.length > length;
+  return line.length > length;
 }
 isLineTooLong('aaaaa', 140);
