@@ -50,7 +50,37 @@ export function getMockData() {
       description: getRandomElementArray(MOCK_DESCRIPTION_LIST),
       message: getRandomElementArray(MOCK_MESSAGE_LIST),
       name:  getRandomElementArray(MOCK_NAME_LIST),
+      likes: getRandomIntFromRange(1,1000),
+      comments: getRandomIntFromRange(1,100),
     });
   }
   return mockData;
 }
+
+const mockData = getMockData();
+
+// Заведите модуль, который будет отвечать за отрисовку миниатюр
+
+const pictureTemplate = document.querySelector('#picture').content;
+/* console.log(pictureTemplate); */
+
+const fragment = document.createDocumentFragment();
+
+for (let i = 0; i < COUNT_MOCKS; i++) {
+  const element = pictureTemplate.cloneNode(true);
+  element.querySelector('.picture__img').src=`${mockData[i].avatar}`;
+  element.querySelector('.picture__likes').textContent=`${mockData[i].likes}`;
+  element.querySelector('.picture__comments').textContent=`${mockData[i].comments}`;
+  fragment.appendChild(element);
+}
+
+document.querySelector('.pictures').appendChild(fragment);
+
+
+// Реализовать сценарий просмотра фотографий в полноразмерном режиме.
+// В таком режиме пользователь получает несколько
+// дополнительных возможностей: детально рассмотреть изображение,
+// поставить «лайк», почитать комментарии, оставленные
+// другими пользователями.
+
+
