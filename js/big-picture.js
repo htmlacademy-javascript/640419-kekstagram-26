@@ -69,9 +69,7 @@ const renderBigPhoto = ({ url, like, comments, description }) => {
 
   socialComments.innerHTML = '';
   socialComments.appendChild(commentFragment);
-
   /*console.log(socialComments); */
-
   socialCommentCount.classList.add('hidden');
   commentLoader.classList.add('hidden');
 };
