@@ -41,7 +41,7 @@ const escPicture = () => {
 по иконке закрытия */
 
 function keyPress(e) {
-  if (e.key === "Escape") {
+  if (e.key === 'Escape') {
     escPicture();// write your logic here.
   }
 }
