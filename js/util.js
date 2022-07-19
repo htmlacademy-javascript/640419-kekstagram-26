@@ -15,18 +15,14 @@ function getRandomIntFromRange(start, end) {
   }
 }
 
-// Функция для проверки максимальной длины строки
-// Будет использоваться для проверки длины введённого комментария, но должна быть универсальна
-
+// функция для проверки максимальной длины строки
 function isLineTooLong(line, length) {
   return line.length > length;
 }
 
 // функции для создания массива
-
 function getRandomElementArray(arr) {
   return arr[getRandomIntFromRange(0, arr.length - 1)];
 }
 
-export {getRandomIntFromRange, getRandomElementArray, isLineTooLong};
-
+export { getRandomIntFromRange, getRandomElementArray, isLineTooLong };

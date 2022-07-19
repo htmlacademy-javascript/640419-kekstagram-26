@@ -1,4 +1,3 @@
-// моки данных
 import {getRandomIntFromRange, getRandomElementArray} from './util.js';
 import {renderBigPhoto} from './big-picture.js';
 
@@ -43,7 +42,6 @@ export const MOCK_NAME_LIST = [
 export function getMockData() {
   const _mockData = [];
 
-  // цикл
   for (let id = 0; id < COUNT_MOCKS; id = id + 1) {
     _mockData.push({
       id: id,
@@ -60,11 +58,7 @@ export function getMockData() {
 
 const mockData = getMockData();
 
-// Заведите модуль, который будет отвечать за отрисовку миниатюр
-// Шаблон изображения случайного пользователя
-
 const pictureTemplate = document.querySelector('#picture').content;
-/* console.log(pictureTemplate); */
 
 const fragment = document.createDocumentFragment();
 
