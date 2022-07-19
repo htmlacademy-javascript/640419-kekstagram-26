@@ -38,7 +38,7 @@ const renderBigPhoto = ({ url, like, comments, description }) => {
   for (let index = 0; index < comments; index++) {
     const listItem = socialComment.cloneNode(true);
     const img = listItem.querySelector('img');
-    img.src = `img/avatar-${getRandomIntFromRange(1,6)}.svg`;
+    img.src = `img/avatar-${getRandomIntFromRange(1, 6)}.svg`;
     img.alt = getRandomElementArray(MOCK_NAME_LIST);
     const text = listItem.querySelector('.social__text');
     text.textContent = getRandomElementArray(MOCK_MESSAGE_LIST);
@@ -49,6 +49,7 @@ const renderBigPhoto = ({ url, like, comments, description }) => {
   socialComments.appendChild(commentFragment);
   socialCommentCount.classList.add('hidden');
   commentLoader.classList.add('hidden');
+  document.addEventListener('keydown', keyPress);
 };
 
 export { renderBigPhoto };
