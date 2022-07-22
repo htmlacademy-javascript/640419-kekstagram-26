@@ -1,14 +1,15 @@
 import { getRandomIntFromRange, getRandomElementArray } from './util.js';
 import { MOCK_NAME_LIST, MOCK_MESSAGE_LIST } from './data.js';
+//
 
-const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
-const bigPictureImg = bigPicture.querySelector('.big-picture__img img');
 const closePictureButton = bigPicture.querySelector('#picture-cancel');
+const socialComments = bigPicture.querySelector('.social__comments');
+const body = document.querySelector('body');
+const bigPictureImg = bigPicture.querySelector('.big-picture__img img');
 const commentLoader = bigPicture.querySelector('.comments-loader');
 const socialCaption = bigPicture.querySelector('.social__caption');
 const socialCommentCount = bigPicture.querySelector('.social__comment-count');
-const socialComments = bigPicture.querySelector('.social__comments');
 const socialComment = bigPicture.querySelector('.social__comment');
 const commentFragment = document.createDocumentFragment();
 
