@@ -1,29 +1,22 @@
 // scale
-const SCALE_DEFAULT = 100;
+/* const SCALE_DEFAULT = 100;
 const SCALE_MAX_ = 100;
 const SCALE_MIN = 25;
 const SCALE_STEP = 25;
 
 // Форма редактирования изображения
 const imgUploadOverlay = document.querySelector('.img-upload__overlay');
-
-// превью изображения
+//превью изображения
 const imgUploadPreview = imgUploadOverlay.querySelector('.img-upload__preview img');
-
-// значение размера (маштаба) изображения
+//значение размера (маштаба) изображения
 const scaleControlValue = imgUploadOverlay.querySelector('.scale__control--value');
-
-// увеличения масштаба
+//увеличения масштаба
 const scaleControlBigger = imgUploadOverlay.querySelector('.scale__control--bigger');
-
-// уменьшения масштаба
+//уменьшения масштаба
 const scaleControlSmaller = imgUploadOverlay.querySelector('.scale__control--smaller');
-
 // 1. функция сделать маштаб меньше
 const zoomOut = () => {
-
 };
-
 
 // 2. функция сделать маштаб больше
 const zoomIn = () => {
@@ -70,4 +63,4 @@ const УменьшениеМаштаба = () => поменятьМаштаб();
 scaleControlBigger.addEventListener('click', УвеличениеМаштаба);
 scaleControlSmaller.addEventListener('click', УменьшениеМаштаба);
 
-export { значениеМаштаба };
+export { значениеМаштаба }; */
