@@ -1,7 +1,4 @@
-// maximum comment size
-const MAX_COMMENT_SIZE = 140;
-const MAX_HASHTAGS = 5;
-const RE = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
+import {MAX_COMMENT_SIZE, MAX_HASHTAGS, RE} from './constans.js';
 
 const form = document.querySelector('.img-upload__form');
 // Добавление хэш-тегов и комментария к изображению
