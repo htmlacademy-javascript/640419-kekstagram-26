@@ -1,40 +1,22 @@
 import { getMockData } from './data.js';
 import './util.js';
+import { closeForm, handlerCloseFormKeydown } from './constans.js';
 
 getMockData();
 
-// добавление обработчика клика onCLick
-// открытие новой формы
 
-const inputUpload = document.querySelector('#upload-file');
+const imgUploadOverlay = document.querySelector('.img-upload__overlay');
+const uploadFile = document.querySelector('#upload-file');
+const uploadCancelBtn = imgUploadOverlay.querySelector('#upload-cancel');
 
-inputUpload.addEventListener('change', handlerTagEvent);
+uploadFile.addEventListener('change', handlerTagEvent);
 
-function handlerTagEvent(event) {
-  /*   console.log(event); */
+function handlerTagEvent() {
+  imgUploadOverlay.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+  document.addEventListener('keydown', handlerCloseFormKeydown);
 }
 
-const uploadSubmitBtn = document.querySelector('#upload-submit');
-
-// блок кнопки
-const btnBlockSubmit = () => {
-  uploadSubmitBtn.disabled = true;
-  uploadSubmitBtn.textContent = 'post...';
-};
-
-// разблок кнопки
-const btnUnblockSubmit = () => {
-  uploadSubmitBtn.disabled = false;
-  uploadSubmitBtn.textContent = 'posting...';
-};
-
-// закрытия окна об успешной отправке -- обработчик
-
-//  функция успешной отправки (закрте окна)
-
-//  функция успешной отправки (открытие окна)
-
-// закртие окна с ошибкой
-
-// откртие окна если будет ошибка
-
+uploadCancelBtn.addEventListener('click', () => {
+  closeForm();
+});
