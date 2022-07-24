@@ -18,7 +18,6 @@ export const handlerCloseFormKeydown = (evt) => {
   if (evt.key === 'Escape') {
     closeForm();
     document.removeEventListener('keydown', handlerCloseFormKeydown);
-    document.addEventListener(closeForm);
   }
 };
 

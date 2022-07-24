@@ -15,7 +15,6 @@ function handlerTagEvent() {
   imgUploadOverlay.classList.remove('hidden');
   document.body.classList.add('modal-open');
   document.addEventListener('keydown', handlerCloseFormKeydown);
-  uploadSelectImage.reset();
 }
 
 uploadCancelBtn.addEventListener('click', () => {
