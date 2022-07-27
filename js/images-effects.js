@@ -2,7 +2,7 @@
 const effectLevelValue = document.querySelector('.effect-level__value');
 
 // Наложение эффекта на изображение
-const imgUploadEffects = document.querySelector('.img-upload__effects');
+/* const imgUploadEffects = document.querySelector('.img-upload__effects'); */
 
 // Предварительный просмотр изображения
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
@@ -10,7 +10,7 @@ const imgUploadPreview = document.querySelector('.img-upload__preview img');
 // Контейнер слайдера
 const imgUploadEffectLevel = document.querySelector('.img-upload__effect-level');
 
-const EFFECTS = [
+/* const EFFECTS = [
   {
     ID: 'none',
     OPTIONS: {}
@@ -86,7 +86,7 @@ const EFFECTS = [
     },
   },
 ];
-
+ */
 const effectList = document.querySelector('.effects__list');
 const effectRadio = effectList.querySelectorAll('.effects__radio');
 
