@@ -97,7 +97,6 @@ const noEffect = () => {
   imgUploadEffectLevel.classList.add('hidden');
 };
 
-// создать обработчик для фильтра;
 const changeFilters = (evt) => {
   const filtersHandler = evt.target.value;
   if (filtersHandler === 'none') {
