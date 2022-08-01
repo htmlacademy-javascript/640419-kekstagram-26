@@ -1,6 +1,4 @@
-import { getRandomIntFromRange, getRandomElementArray } from './util.js';
-import { MOCK_NAME_LIST, MOCK_MESSAGE_LIST } from './data.js';
-//
+import { isEscapeKey } from './utils.js';
 
 const bigPicture = document.querySelector('.big-picture');
 const closePictureButton = bigPicture.querySelector('#picture-cancel');
@@ -13,19 +11,20 @@ const socialCommentCount = bigPicture.querySelector('.social__comment-count');
 const socialComment = bigPicture.querySelector('.social__comment');
 const commentFragment = document.createDocumentFragment();
 
-const escPicture = () => {
+const bigPictureOpen = () => {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
-  document.removeEventListener('keydown', keyPress);
+  // eslint-disable-next-line no-use-before-define
+  document.removeEventListener('keydown', handlerEscapePress);
 };
 
-function keyPress(e) {
-  if (e.key === 'Escape') {
-    escPicture();
+const handlerEscapePress = (evt) => {
+  if (isEscapeKey(evt)) {
+    bigPictureOpen();
   }
-}
+};
 
-closePictureButton.addEventListener('click', escPicture);
+closePictureButton.addEventListener('click', bigPictureOpen);
 
 const renderBigPhoto = ({ url, like, comments, description }) => {
   bigPicture.classList.remove('hidden');
@@ -36,13 +35,13 @@ const renderBigPhoto = ({ url, like, comments, description }) => {
   socialCommentCount.textContent = like;
   socialCaption.textContent = description;
 
-  for (let index = 0; index < comments; index++) {
+  for (let index = 0; index < comments.length; index++) {
     const listItem = socialComment.cloneNode(true);
     const img = listItem.querySelector('img');
-    img.src = `img/avatar-${getRandomIntFromRange(1, 6)}.svg`;
-    img.alt = getRandomElementArray(MOCK_NAME_LIST);
+    img.src = comments[index].avatar;
+    img.alt = comments[index].name;
     const text = listItem.querySelector('.social__text');
-    text.textContent = getRandomElementArray(MOCK_MESSAGE_LIST);
+    text.textContent = comments[index].message;
     commentFragment.appendChild(listItem);
   }
 
@@ -50,7 +49,7 @@ const renderBigPhoto = ({ url, like, comments, description }) => {
   socialComments.appendChild(commentFragment);
   socialCommentCount.classList.add('hidden');
   commentLoader.classList.add('hidden');
-  document.addEventListener('keydown', keyPress);
+  document.addEventListener('keydown', handlerEscapePress);
 };
 
 export { renderBigPhoto };
