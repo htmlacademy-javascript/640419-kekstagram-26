@@ -9,12 +9,14 @@ const fetchDataErrorMessage = () => {
   const messageError = document.querySelector('#error').content.querySelector('.error').cloneNode(true);
   const button = messageError.querySelector('.error__button');
   messageError.querySelector('.error__title').textContent = FETCH_DATA_ERROR_TEXT;
-  button.textContent = 'Ок :('
+  button.textContent = 'Ок :(';
+  // eslint-disable-next-line no-use-before-define
   document.addEventListener('keydown', handlerMessagePressKey);
   const handlerClose = () => {
     messageError.remove();
+    // eslint-disable-next-line no-use-before-define
     document.removeEventListener('keydown', handlerMessagePressKey);
-  }
+  };
   button.addEventListener('click', handlerClose);
   messageError.addEventListener('click', handlerClose);
   document.body.append(messageError);
@@ -43,7 +45,7 @@ const showErrorMessage = () => {
     messageError.remove();
     document.removeEventListener('keydown', handlerMessagePressKey);
     openForm();
-  }
+  };
   button.addEventListener('click', handlerClose);
   messageError.addEventListener('click', handlerClose);
   document.body.append(messageError);
@@ -56,7 +58,7 @@ const showSuccessMessage = () => {
   const handlerClose = () => {
     messageSuccess.remove();
     document.removeEventListener('keydown', handlerMessagePressKey);
-  }
+  };
   button.addEventListener('click', handlerClose);
   messageSuccess.addEventListener('click', handlerClose);
   document.body.append(messageSuccess);

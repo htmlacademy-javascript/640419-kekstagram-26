@@ -1,7 +1,7 @@
 import { renderPreview } from './data.js';
 import { changeFilters } from './images-effects.js';
 import { getData, handlerSubmit } from './api.js';
-import { closeForm, openForm, resetForm } from './upload-form.js';
+import { openForm } from './upload-form.js';
 
 getData(renderPreview);
 

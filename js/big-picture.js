@@ -11,16 +11,17 @@ const socialCommentCount = bigPicture.querySelector('.social__comment-count');
 const socialComment = bigPicture.querySelector('.social__comment');
 const commentFragment = document.createDocumentFragment();
 
+const bigPictureOpen = () => {
+  bigPicture.classList.add('hidden');
+  body.classList.remove('modal-open');
+  // eslint-disable-next-line no-use-before-define
+  document.removeEventListener('keydown', handlerEscapePress);
+};
+
 const handlerEscapePress = (evt) => {
   if (isEscapeKey(evt)) {
     bigPictureOpen();
   }
-};
-
-const bigPictureOpen = () => {
-  bigPicture.classList.add('hidden');
-  body.classList.remove('modal-open');
-  document.removeEventListener('keydown', handlerEscapePress);
 };
 
 closePictureButton.addEventListener('click', bigPictureOpen);

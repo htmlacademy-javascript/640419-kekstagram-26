@@ -21,3 +21,4 @@ export const resetScale = () => {
   scaleInput.value = '100%';
   imgUploadPreview.style = 'transform: none';
 };
+
