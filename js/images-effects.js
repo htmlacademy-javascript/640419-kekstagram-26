@@ -1,13 +1,15 @@
+import { VALUE_EMPTY_FILTER } from './constants.js';
+
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
 
-const removeEffect = () => {
+export const resetEffect = () => {
   imgUploadPreview.removeAttribute('class');
 };
 
 export const changeFilters = (evt) => {
   const filtersHandler = evt.target.value;
-  removeEffect();
-  if (filtersHandler !== 'none') {
+  resetEffect();
+  if (filtersHandler !== VALUE_EMPTY_FILTER) {
     imgUploadPreview.classList.add(`effects__preview--${filtersHandler}`);
   }
 };

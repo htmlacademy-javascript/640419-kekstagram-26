@@ -1,4 +1,5 @@
-import { isEscapeKey } from './main.js';
+import { isEscapeKey } from './utils.js';
+
 const bigPicture = document.querySelector('.big-picture');
 const closePictureButton = bigPicture.querySelector('#picture-cancel');
 const socialComments = bigPicture.querySelector('.social__comments');
@@ -10,17 +11,17 @@ const socialCommentCount = bigPicture.querySelector('.social__comment-count');
 const socialComment = bigPicture.querySelector('.social__comment');
 const commentFragment = document.createDocumentFragment();
 
-const bigPictureOpen = () => {
-  bigPicture.classList.add('hidden');
-  body.classList.remove('modal-open');
-  document.removeEventListener('keydown', keyPress);
-};
-
-function keyPress(evt) {
+const handlerEscapePress = (evt) => {
   if (isEscapeKey(evt)) {
     bigPictureOpen();
   }
-}
+};
+
+const bigPictureOpen = () => {
+  bigPicture.classList.add('hidden');
+  body.classList.remove('modal-open');
+  document.removeEventListener('keydown', handlerEscapePress);
+};
 
 closePictureButton.addEventListener('click', bigPictureOpen);
 
@@ -47,7 +48,7 @@ const renderBigPhoto = ({ url, like, comments, description }) => {
   socialComments.appendChild(commentFragment);
   socialCommentCount.classList.add('hidden');
   commentLoader.classList.add('hidden');
-  document.addEventListener('keydown', keyPress);
+  document.addEventListener('keydown', handlerEscapePress);
 };
 
 export { renderBigPhoto };
