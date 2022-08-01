@@ -2,6 +2,7 @@ import { VALUE_EMPTY_FILTER } from './constants.js';
 
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
 
+
 export const resetEffect = () => {
   imgUploadPreview.removeAttribute('class');
 };
